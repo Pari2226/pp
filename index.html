@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Ayush Sharawat – Web Developer, UI/UX Designer, and Tech Enthusiast." />
+  <title>Ayush Sharawat | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="light">
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <h1 aria-label="Ayush's Portfolio">Ayush</h1>
+      </div>
+      <ul class="nav-center">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      </div>
+    </nav>
+  </header>
 
+  <section id="hero" data-animate="fade-in">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Hi, I'm <span class="highlight">Ayush Sharawat</span> 👋</h2>
+        <p class="subtitle">Web Developer • UI/UX Designer • Graphic Artist</p>
+        <a href="#about" class="btn">Explore More</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/profile.jpg" alt="Portrait of Ayush Sharawat" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" data-animate="slide-left">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics.
+        I’ve built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems.
+        I lead design and dev roles across college societies and thrive on blending technology with creativity.
+      </p>
+    </div>
+  </section>
+
+  <section id="education" data-animate="slide-right">
+    <div class="container">
+      <h2>Education</h2>
+      <ul class="education-list">
+        <li>
+          <strong>B.Tech in Computer Science and Engineering (AI)</strong><br>
+          KIET Group of Institutions, Ghaziabad (AKTU)<br>
+          Currently Pursuing, Average CGPA: 7.2
+        </li>
+        <li>
+          <strong>Diploma</strong><br>
+          Government Polytechnic, Ghaziabad (BTEUP)<br>
+          70%
+        </li>
+        <li>
+          <strong>10th Grade</strong><br>
+          Dehradun Public School, Ghaziabad (CBSE)<br>
+          78.4%
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" data-animate="slide-left">
+    <div class="container">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li><strong>Repo Quest:</strong> ML + NLP powered GitHub code snippet search.</li>
+        <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</li>
+        <li><strong>Employee Manager:</strong> Python + MySQL based employee record system.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills" data-animate="slide-right">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Java</li><li>C</li><li>MySQL</li><li>Graphics</li><li>UI/UX</li>
+        <li>Python</li><li>DBMS</li><li>Algorithms</li><li>DAA</li><li>DSA</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" data-animate="fade-in">
+    <div class="container">
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:whatsupayush@gmail.com">whatsupayush@gmail.com</a></p>
+        <p>Phone: <a href="tel:9319391078">9319391078</a></p>
+        <p><strong>Certifications:</strong> AWS Academy Cloud Foundations</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
