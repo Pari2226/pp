@@ -8,3 +8,4 @@ your-portfolio/ <br>
 ├── script.js <br>
 ├── assets/ <br>
 │   └── profile.jpg <br>
+│   └── resume.jpg
