@@ -1,3 +1,4 @@
+// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -7,35 +8,80 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
 });
 
+// Load saved theme
 document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('theme') === 'dark') {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
     body.classList.add('dark');
     themeToggle.textContent = '☀️';
   }
-
-  // Animation observer
-  const sections = document.querySelectorAll('section[data-animate]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(section => observer.observe(section));
 });
 
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = e.target.querySelector('input[name="name"]').value;
-  const email = e.target.querySelector('input[name="email"]').value;
-  const message = e.target.querySelector('textarea[name="message"]').value;
-  if (name && email && message) {
-    alert('Message sent successfully! (Demo)');
-    e.target.reset();
-  } else {
-    alert('Please fill out all fields.');
-  }
+// Animation on Scroll
+const sections = document.querySelectorAll('section[data-animate]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+  observer.observe(section);
 });
+
+// Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navCenter = document.querySelector('.nav-center');
+
+hamburger.addEventListener('click', () => {
+  navCenter.classList.toggle('active');
+});
+
+// Form Submission with EmailJS
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message,
+      }, 'YOUR_PUBLIC_KEY');
+
+      formMessage.textContent = 'Message sent successfully!';
+      formMessage.classList.add('success', 'show');
+      contactForm.reset();
+    } catch (error) {
+      formMessage.textContent = 'Failed to send message. Please try again.';
+      formMessage.classList.add('error', 'show');
+    }
+
+    setTimeout(() => formMessage.classList.remove('show'), 5000);
+  });
+}
+
+// Role Text Animation
+const roleText = document.getElementById('role-text');
+const roles = ['Web Developer', 'UI/UX Designer', 'Graphic Designer'];
+let roleIndex = 0;
+
+function updateRole() {
+  roleText.style.width = '0';
+  setTimeout(() => {
+    roleText.textContent = roles[roleIndex];
+    roleText.style.width = `${roleText.scrollWidth}px`;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }, 1000);
+}
+
+setInterval(updateRole, 5000);
+updateRole();

@@ -13,9 +13,7 @@
 <body class="light">
   <header>
     <nav class="navbar">
-      <div class="nav-left">
-        <h1 aria-label="Ayush's Portfolio">Ayush</h1>
-      </div>
+      <button class="hamburger">☰</button>
       <ul class="nav-center">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -24,18 +22,16 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-right">
-        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-      </div>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
     </nav>
   </header>
 
   <section id="hero" data-animate="fade-in">
     <div class="hero-content">
       <div class="hero-text">
-        <h2>Hi, I'm <span class="highlight">Ayush Sharawat</span> 👋</h2>
-        <p class="subtitle">Web Developer • UI/UX Designer • Graphic Artist</p>
-        <a href="#about" class="btn">Explore More</a>
+        <h2>Ayush Sharawat</h2>
+        <p class="subtitle">I'm <span id="role-text"></span></p>
+        <a href="assets/resume.pdf" target="_blank" class="btn">My Resume</a>
       </div>
       <div class="hero-image">
         <img src="assets/profile.jpg" alt="Portrait of Ayush Sharawat" />
@@ -82,7 +78,7 @@
       <h2>Projects</h2>
       <ul class="project-list">
         <li><strong>Repo Quest:</strong> ML + NLP powered GitHub code snippet search.</li>
-        <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</li>
+        <li><a href="https://github.com/ayushsharawat2003/Blog-Manager" target="_blank"><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</a></li>
         <li><strong>Employee Manager:</strong> Python + MySQL based employee record system.</li>
       </ul>
     </div>
@@ -106,6 +102,7 @@
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
+        <div id="formMessage" class="form-message"></div>
       </form>
       <div class="contact-info">
         <p>Email: <a href="mailto:whatsupayush@gmail.com">whatsupayush@gmail.com</a></p>
@@ -115,6 +112,11 @@
     </div>
   </section>
 
+  <footer>
+    <p>Made with ♥ by iuss Sehrawat</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </body>
 </html>
