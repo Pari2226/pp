@@ -10,27 +10,28 @@
 }
 
 body.light {
-  background: var(--light-bg);
+  background: linear-gradient(135deg, #ffefba, #ffffff);
   color: var(--light-text);
-  padding-top: 40px; /* Increased gap above header for floating effect */
+  padding-top: 0; /* Remove padding to let gradient show */
 }
 body.dark {
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, #1e1e2f, #111);
   color: var(--dark-text);
-  padding-top: 40px; /* Increased gap above header for floating effect */
+  padding-top: 0; /* Remove padding to let gradient show */
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh; /* Ensure body covers full height */
 }
 
 /* HEADER */
 header {
   width: 90%; /* Reduced width with outer margins */
   position: fixed;
-  top: 20px; /* Moved down slightly from the top */
+  top: 20px; /* Maintain offset from top */
   left: 50%;
   transform: translateX(-50%); /* Center horizontally */
   z-index: 1000;
@@ -133,12 +134,12 @@ body.dark #theme-toggle:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
-  background: linear-gradient(135deg, #ffefba, #ffffff);
+  padding-top: 80px; /* Adjust padding to account for header height */
+  background: none; /* Remove inline gradient to use body's */
 }
 
 body.dark #hero {
-  background: linear-gradient(135deg, #1e1e2f, #111);
+  background: none; /* Remove inline gradient to use body's */
 }
 
 .hero-content {
