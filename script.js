@@ -44,6 +44,11 @@ const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
+  // Initialize EmailJS with your User ID
+  (function() {
+    emailjs.init('Ayush Sharawat'); // Replace with your EmailJS User ID
+  })();
+
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -51,11 +56,12 @@ if (contactForm) {
     const data = Object.fromEntries(formData);
 
     try {
-      const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      const response = await emailjs.send('service_y0tr9c6', 'template_8amzd8k', {
         from_name: data.name,
         from_email: data.email,
         message: data.message,
-      }, 'YOUR_PUBLIC_KEY');
+        to_email: 'whatsupayush@gmail.com', // Recipient email
+      }, 'RD85aIMspEE5s7Gzb'); // Replace with your Public Key
 
       formMessage.textContent = 'Message sent successfully!';
       formMessage.classList.add('success', 'show');
@@ -63,6 +69,7 @@ if (contactForm) {
     } catch (error) {
       formMessage.textContent = 'Failed to send message. Please try again.';
       formMessage.classList.add('error', 'show');
+      console.error('Error:', error); // Log error for debugging
     }
 
     setTimeout(() => formMessage.classList.remove('show'), 5000);
