@@ -76,19 +76,37 @@ if (contactForm) {
   });
 }
 
-// Role Text Animation
+// Typing Animation for Role Text
 const roleText = document.getElementById('role-text');
-const roles = ['Web Developer', 'UI/UX Designer', 'Graphic Designer'];
+const roles = ['UI/UX Designer', 'Web Developer', 'Creative Coder', 'Graphic Designer'];
 let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-function updateRole() {
-  roleText.style.width = '0';
-  setTimeout(() => {
-    roleText.textContent = roles[roleIndex];
-    roleText.style.width = `${roleText.scrollWidth}px`;
-    roleIndex = (roleIndex + 1) % roles.length;
-  }, 1000);
+function typeRole() {
+  const currentRole = roles[roleIndex];
+  if (!isDeleting) {
+    // Typing
+    roleText.textContent = currentRole.substring(0, charIndex);
+    charIndex++;
+    if (charIndex > currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeRole, 1500); // Pause before deleting
+    } else {
+      setTimeout(typeRole, 100); // Typing speed
+    }
+  } else {
+    // Deleting
+    roleText.textContent = currentRole.substring(0, charIndex);
+    charIndex--;
+    if (charIndex < 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeRole, 500); // Pause before typing next role
+    } else {
+      setTimeout(typeRole, 50); // Deleting speed
+    }
+  }
 }
 
-setInterval(updateRole, 5000);
-updateRole();
+typeRole();

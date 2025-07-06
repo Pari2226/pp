@@ -148,19 +148,20 @@ body.dark #hero {
   justify-content: center;
   max-width: 1100px;
   padding: 0 1.5rem;
-  gap: 1.5rem;
+  gap: 2rem; /* Increased gap for better spacing */
   flex-wrap: wrap;
 }
 
 .hero-text h2 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   margin: 0.5rem 0;
+  font-weight: 700; /* Bold for emphasis */
   color: inherit; /* Inherits body color, changes with theme */
 }
 
 .subtitle {
   font-size: 1.2rem;
-  margin: 0.5rem 0;
+  margin: 1rem 0; /* Added space below subtitle */
   display: flex;
   align-items: center; /* Vertical alignment */
   gap: 0.5rem; /* Space between "I'm" and animated text */
@@ -175,19 +176,23 @@ body.dark #hero {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 5s steps(20, end) infinite;
+  border-right: 2px solid var(--primary); /* Cursor effect */
+  animation: blinkCursor 0.7s step-end infinite; /* Blinking cursor */
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-right-color: var(--primary); }
+  50% { border-right-color: transparent; }
 }
 
 @keyframes typing {
-  0% { width: 0; }
-  20% { width: 0; }
-  25% { width: 5.5em; } /* "Web Developer" */
-  45% { width: 5.5em; }
-  50% { width: 12em; } /* "Web Developer, UI/UX Designer" */
-  70% { width: 12em; }
-  75% { width: 17.5em; } /* "Web Developer, UI/UX Designer, Graphic Designer" */
-  95% { width: 17.5em; }
-  100% { width: 0; }
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes deleting {
+  from { width: 100%; }
+  to { width: 0; }
 }
 
 .btn {
@@ -200,43 +205,74 @@ body.dark #hero {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 1.5rem; /* Added space between button and subtitle */
 }
 
 .btn:hover {
   background: var(--secondary);
 }
 
-.hero-image img {
-  width: 280px;
-  border-radius: 50%;
-  border: 4px solid var(--primary);
+.hero-image {
+  position: relative;
+  margin-left: 50px; /* Shifted further to the right */
 }
 
-/* SECTIONS */
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: 0;
+  background: var(--primary); /* Border color */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="white" d="M50,15 C85,8 105,30 135,35 C165,40 185,65 180,95 C175,125 150,145 120,155 C90,165 65,150 45,135 C25,120 10,100 15,70 C20,40 35,20 50,15 Z"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="white" d="M50,15 C85,8 105,30 135,35 C165,40 185,65 180,95 C175,125 150,145 120,155 C90,165 65,150 45,135 C25,120 10,100 15,70 C20,40 35,20 50,15 Z"/></svg>');
+  opacity: 0;
+  transform: translateX(-100px) translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-image img {
+  width: 500px; /* Increased size for better visibility */
+  height: auto;
+  position: relative; /* Ensure image stays above border */
+  z-index: 1; /* Above the border */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(-100px) translateY(-30px);
+  overflow: hidden;
+  background: url('assets/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="white" d="M56,10 C90,5 110,25 140,30 C170,35 190,60 185,90 C180,120 155,140 125,150 C95,160 70,145 50,130 C30,115 15,95 20,65 C25,35 40,15 56,10 Z"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="white" d="M56,10 C90,5 110,25 140,30 C170,35 190,60 185,90 C180,120 155,140 125,150 C95,160 70,145 50,130 C30,115 15,95 20,65 C25,35 40,15 56,10 Z"/></svg>');
+}
+
+.hero-image.animate::before {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0) translateY(0); /* Move to original position */
+}
+
+.hero-image.animate img {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0) translateY(0); /* Move to original position */
+}
+
 section {
   padding: 80px 20px;
 }
 
 section[data-animate] {
-  opacity: 0;
+  opacity: 1; /* Default state, overridden by animate class */
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-section.animate {
+section.animate[data-animate="fade-multi"] .hero-image img,
+section.animate[data-animate="fade-multi"] .hero-image::before {
   opacity: 1;
-  transform: translateX(0);
-}
-
-section[data-animate="fade-in"] {
-  transform: translateY(20px);
-}
-
-section[data-animate="slide-left"] {
-  transform: translateX(-50px);
-}
-
-section[data-animate="slide-right"] {
-  transform: translateX(50px);
+  transform: translateX(0) translateY(0);
 }
 
 .container {
@@ -508,7 +544,7 @@ footer a:hover {
     flex-direction: column;
     text-align: center;
     padding: 0 1rem;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .hero-text h2 {
@@ -522,8 +558,19 @@ footer a:hover {
     gap: 0.5rem;
   }
 
+  .hero-image {
+    margin-left: 20px; /* Reduced shift on mobile */
+  }
+
   .hero-image img {
-    width: 200px;
+    width: 400px; /* Adjusted for mobile */
+  }
+
+  .hero-image::before {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
   }
 
   .btn {
@@ -533,10 +580,6 @@ footer a:hover {
 
   section {
     padding: 50px 15px;
-  }
-
-  section[data-animate] {
-    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .container {
@@ -620,8 +663,19 @@ footer a:hover {
     gap: 0.5rem;
   }
 
+  .hero-image {
+    margin-left: 10px; /* Minimal shift on small screens */
+  }
+
   .hero-image img {
-    width: 160px;
+    width: 300px; /* Adjusted for small screens */
+  }
+
+  .hero-image::before {
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
   }
 
   .btn {

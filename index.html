@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Ayush Sharawat – Web Developer, UI/UX Designer, and Tech Enthusiast." />
-  <title>Ayush Sharawat | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Sharawat - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body class="light">
   <header>
@@ -22,24 +20,24 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+      <button id="theme-toggle">🌙</button>
     </nav>
   </header>
 
-  <section id="hero" data-animate="fade-in">
+  <section id="hero" data-animate="fade-multi">
     <div class="hero-content">
       <div class="hero-text">
         <h2>Ayush Sharawat</h2>
         <p class="subtitle">I'm <span id="role-text"></span></p>
-        <a href="assets/resume.pdf" target="_blank" class="btn">My Resume</a>
+        <a href="assets/resume.jpg" class="btn">My Resume</a>
       </div>
       <div class="hero-image">
-        <img src="assets/profile.jpg" alt="Portrait of Ayush Sharawat" />
+        <img src="assets/profile.jpg" alt="Profile Picture">
       </div>
     </div>
   </section>
 
-  <section id="about" data-animate="slide-left">
+  <section id="about" data-animate="fade-multi">
     <div class="container">
       <h2>About Me</h2>
       <p>
@@ -50,7 +48,7 @@
     </div>
   </section>
 
-  <section id="education" data-animate="slide-right">
+  <section id="education" data-animate="fade-multi">
     <div class="container">
       <h2>Education</h2>
       <ul class="education-list">
@@ -73,50 +71,57 @@
     </div>
   </section>
 
-  <section id="projects" data-animate="slide-left">
+  <section id="projects" data-animate="fade-multi">
     <div class="container">
       <h2>Projects</h2>
       <ul class="project-list">
         <li><strong>Repo Quest:</strong> ML + NLP powered GitHub code snippet search.</li>
-        <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</a></li>
+        <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</li>
         <li><strong>Employee Manager:</strong> Python + MySQL based employee record system.</li>
       </ul>
     </div>
   </section>
 
-  <section id="skills" data-animate="slide-right">
+  <section id="skills" data-animate="fade-multi">
     <div class="container">
       <h2>Skills</h2>
       <ul class="skills-list">
-        <li>Java</li><li>C</li><li>MySQL</li><li>Graphics</li><li>UI/UX</li>
-        <li>Python</li><li>DBMS</li><li>Algorithms</li><li>DAA</li><li>DSA</li>
+        <li>Java</li>
+        <li>C</li>
+        <li>MySQL</li>
+        <li>Graphics</li>
+        <li>UI/UX</li>
+        <li>Python</li>
+        <li>DBMS</li>
+        <li>Algorithms</li>
+        <li>DAA</li>
+        <li>DSA</li>
       </ul>
     </div>
   </section>
 
-  <section id="contact" data-animate="fade-in">
+  <section id="contact" data-animate="fade-multi">
     <div class="container">
       <h2>Contact</h2>
       <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send</button>
-        <div id="formMessage" class="form-message"></div>
       </form>
+      <div id="formMessage" class="form-message"></div>
       <div class="contact-info">
         <p>Email: <a href="mailto:whatsupayush@gmail.com">whatsupayush@gmail.com</a></p>
-        <p>Phone: <a href="tel:9319391078">9319391078</a></p>
-        <p><strong>Certifications:</strong> AWS Academy Cloud Foundations</p>
+        <p>Phone: 9319391078</p>
+        <p>Certifications: AWS Academy Cloud Foundations</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Made with ♥ by iuss Sehrawat</p>
+    <p>Made with ♥ by <a href="#">Ayush Sharawat</a></p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
