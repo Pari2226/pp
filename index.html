@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayush Sharawat - Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="light">
   <header>
@@ -20,24 +20,40 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle">🌙</button>
     </nav>
   </header>
+  <button id="theme-toggle">
+    <span class="slider">
+      <span class="icon sun-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" fill="currentColor"/>
+          <path d="M12 3V1M12 23V21M3 12H1M23 12H21M5.64 5.64L4.22 4.22M19.78 19.78L18.36 18.36M5.64 18.36L4.22 19.78M19.78 4.22L18.36 5.64" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </span>
+      <span class="icon moon-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3C13.58 3 15.5 4.92 15.5 7.29A4.5 4.5 0 0 0 21 12.79Z" fill="currentColor"/>
+        </svg>
+      </span>
+    </span>
+    <span class="label light-label">LIGHT</span>
+    <span class="label dark-label">DARK</span>
+  </button>
 
-  <section id="hero" data-animate="fade-multi">
+  <section id="hero" data-animate>
     <div class="hero-content">
       <div class="hero-text">
         <h2>Ayush Sharawat</h2>
         <p class="subtitle">I'm <span id="role-text"></span></p>
-        <a href="assets/resume.jpg" class="btn">My Resume</a>
+        <a href="assets/resume.jpg" class="btn" download>My Resume</a>
       </div>
       <div class="hero-image">
-        <img src="assets/profile.jpg" alt="Profile Picture">
+        <img src="assets/profile.jpg" alt="Ayush Sharawat">
       </div>
     </div>
   </section>
 
-  <section id="about" data-animate="fade-multi">
+  <section id="about" data-animate>
     <div class="container">
       <h2>About Me</h2>
       <p>
@@ -48,7 +64,7 @@
     </div>
   </section>
 
-  <section id="education" data-animate="fade-multi">
+  <section id="education" data-animate>
     <div class="container">
       <h2>Education</h2>
       <ul class="education-list">
@@ -71,7 +87,7 @@
     </div>
   </section>
 
-  <section id="projects" data-animate="fade-multi">
+  <section id="projects" data-animate>
     <div class="container">
       <h2>Projects</h2>
       <ul class="project-list">
@@ -82,7 +98,7 @@
     </div>
   </section>
 
-  <section id="skills" data-animate="fade-multi">
+  <section id="skills" data-animate>
     <div class="container">
       <h2>Skills</h2>
       <ul class="skills-list">
@@ -100,7 +116,7 @@
     </div>
   </section>
 
-  <section id="contact" data-animate="fade-multi">
+  <section id="contact" data-animate>
     <div class="container">
       <h2>Contact</h2>
       <form id="contactForm">

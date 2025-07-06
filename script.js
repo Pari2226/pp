@@ -4,7 +4,6 @@ const body = document.body;
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
-  themeToggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
   localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
 });
 
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'light';
   if (savedTheme === 'dark') {
     body.classList.add('dark');
-    themeToggle.textContent = '☀️';
   }
 });
 
