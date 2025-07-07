@@ -11,6 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
   if (savedTheme === 'dark') {
     body.classList.add('dark');
   }
+  // Clear URL hash immediately
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+  }
+  // Force scroll to top
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scroll(0, 0); // Fallback for broader compatibility
+});
+
+window.addEventListener('load', () => {
+  // Additional scroll to top after full page load to counter browser restore
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scroll(0, 0);
+    // Ensure hash is cleared again
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+    }
+  }, 0);
 });
 
 const sections = document.querySelectorAll('section[data-animate]');
