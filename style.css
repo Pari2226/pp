@@ -5,66 +5,66 @@
   --dark-text: #ffffff;
   --primary: #ff6f61;
   --secondary: #6c63ff;
-  --grass-green: #a3bffa; /* Soft green for grassmorphism */
-  --grass-light: #e6ffe6; /* Light green tint */
+  --grass-green: #a3bffa;
+  --grass-light: #e6ffe6;  /* ✅ Correct */
 }
 
 body.light {
   background: linear-gradient(135deg, #ffefba, #ffffff);
   color: var(--light-text);
-  padding-top: 0; /* Remove padding to let gradient show */
+  padding-top: 0;
 }
 body.dark {
   background: linear-gradient(135deg, #1e1e2f, #111);
   color: var(--dark-text);
-  padding-top: 0; /* Remove padding to let gradient show */
+  padding-top: 0;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  min-height: 100vh; /* Ensure body covers full height */
+  min-height: 100vh;
 }
 
 /* HEADER */
 header {
-  width: 90%; /* Reduced width with outer margins */
+  width: 90%;
   position: fixed;
-  top: 20px; /* Maintain offset from top */
+  top: 20px;
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
+  transform: translateX(-50%);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(20px); /* Increased blur for better visibility */
-  border-radius: 15px; /* Increased radius for softer look */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 0.5rem 0; /* Reduced padding for modern look */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(circle at top center, rgba(0, 0, 0, 0.15), transparent);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.dark header {
-  background: rgba(18, 18, 18, 0.2); /* Semi-transparent dark */
+  background: linear-gradient(rgba(18, 18, 18, 0.2), rgba(18, 18, 18, 0.2)), radial-gradient(circle at top center, rgba(255, 255, 255, 0.15), transparent);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 header.scrolled {
-  background: rgba(255, 255, 255, 0.3); /* Slightly more opaque when scrolled */
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), radial-gradient(circle at top center, rgba(0, 0, 0, 0.15), transparent);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 body.dark header.scrolled {
-  background: rgba(18, 18, 18, 0.3);
+  background: linear-gradient(rgba(18, 18, 18, 0.3), rgba(18, 18, 18, 0.3)), radial-gradient(circle at top center, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .navbar {
   display: flex;
-  justify-content: center; /* Center all content */
+  justify-content: center;
   align-items: center;
   padding: 0 1.5rem;
   max-width: 1200px;
   margin: auto;
-  border-radius: 15px; /* Matches header radius */
+  border-radius: 15px;
 }
 
 .nav-center {
@@ -97,14 +97,14 @@ body.dark .nav-center li a:hover {
   border: none;
   cursor: pointer;
   color: var(--grass-green);
-  border-radius: 50%; /* Circular hamburger */
+  border-radius: 50%;
   padding: 0.3rem;
   position: absolute;
-  left: 1.5rem; /* Reset to original position */
+  left: 1.5rem;
 }
 
 body.dark .hamburger {
-  color: var(--grass-light); /* Lighter green in dark mode */
+  color: var(--grass-light);
 }
 
 /* Theme Toggle */
@@ -113,10 +113,10 @@ body.dark .hamburger {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  width: 80px; /* Pill shape width */
-  height: 34px; /* Pill shape height */
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-  border-radius: 17px; /* Pill shape */
+  width: 80px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 17px;
   border: none;
   cursor: pointer;
   display: flex;
@@ -158,13 +158,14 @@ body.dark #theme-toggle .slider {
 }
 
 #theme-toggle .icon {
-  font-size: 16px;
-  color: var(--light-text);
-  transition: color 0.3s ease;
+  width: 16px;
+  height: 16px;
+  stroke:  var(--light-text);
+  transition: stroke 0.3s ease;
 }
 
 body.dark #theme-toggle .icon {
-  color: var(--dark-text);
+  stroke: var(--dark-text);
 }
 
 #theme-toggle .sun-icon {
@@ -191,7 +192,7 @@ body.dark #theme-toggle .moon-icon {
   top: 50%;
   transform: translateY(-50%);
   transition: opacity 0.3s ease;
-  z-index: 1; /* Ensure text is above the slider */
+  z-index: 1;
 }
 
 body.dark #theme-toggle .label {
@@ -199,7 +200,7 @@ body.dark #theme-toggle .label {
 }
 
 #theme-toggle .light-label {
-  right: 12px; /* Positioned to the right of the slider in light mode */
+  right: 12px;
   opacity: 1;
 }
 
@@ -208,7 +209,7 @@ body.dark #theme-toggle .light-label {
 }
 
 #theme-toggle .dark-label {
-  left: 12px; /* Positioned to the left of the slider in dark mode */
+  left: 12px;
   opacity: 0;
 }
 
@@ -222,12 +223,12 @@ body.dark #theme-toggle .dark-label {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px; /* Adjust padding to account for header height */
-  background: none; /* Remove inline gradient to use body's */
+  padding-top: 80px;
+  background: none;
 }
 
 body.dark #hero {
-  background: none; /* Remove inline gradient to use body's */
+  background: none;
 }
 
 .hero-content {
@@ -236,36 +237,43 @@ body.dark #hero {
   justify-content: center;
   max-width: 1100px;
   padding: 0 1.5rem;
-  gap: 2rem; /* Increased gap for better spacing */
+  gap: 2rem;
   flex-wrap: wrap;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-text h2 {
   font-size: 2.8rem;
   margin: 0.5rem 0;
-  font-weight: 700; /* Bold for emphasis */
-  color: inherit; /* Inherits body color, changes with theme */
+  font-weight: 700;
+  color: inherit;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  margin: 1rem 0; /* Added space below subtitle */
+  margin: 1rem 0;
   display: flex;
-  align-items: center; /* Vertical alignment */
-  gap: 0.5rem; /* Space between "I'm" and animated text */
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .subtitle span {
-  color: #000000; /* "I'm" stays black regardless of theme */
+  color: #000000;
 }
 
 #role-text {
-  color: var(--primary); /* Animated text in orange */
+  color: var(--primary);
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid var(--primary); /* Cursor effect */
-  animation: blinkCursor 0.7s step-end infinite; /* Blinking cursor */
+  border-right: 2px solid var(--primary);
+  animation: blinkCursor 0.7s step-end infinite;
 }
 
 @keyframes blinkCursor {
@@ -283,26 +291,98 @@ body.dark #hero {
   to { width: 0; }
 }
 
-.btn {
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.btn.contact-btn {
   background: var(--primary);
   color: #fff;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: none;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-top: 1.5rem; /* Added space between button and subtitle */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  line-height: 20px;
+  width: 140px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
+.btn.contact-btn:hover {
   background: var(--secondary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--light-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .social-btn {
+  background: var(--dark-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .social-btn:hover {
+  background: var(--primary);
+}
+
+.social-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+body.light .social-icon.light-icon {
+  display: block;
+}
+
+body.light .social-icon.dark-icon {
+  display: none;
+}
+
+body.dark .social-icon.light-icon {
+  display: none;
+}
+
+body.dark .social-icon.dark-icon {
+  display: block;
 }
 
 .hero-image {
   position: relative;
-  margin-left: 50px; /* Shifted further to the right */
+  margin-left: 50px;
 }
 
 @keyframes morphBlob {
@@ -324,7 +404,7 @@ body.dark #hero {
   right: -10px;
   bottom: -10px;
   z-index: 0;
-  background: var(--primary); /* Border color */
+  background: var(--primary);
   animation: morphBlob 5s ease-in-out infinite;
 }
 
@@ -344,11 +424,11 @@ body.dark #hero {
 }
 
 .hero-image img {
-  width: 500px; /* Increased size for better visibility */
+  width: 500px;
   height: auto;
-  position: relative; /* Ensure image stays above border */
-  z-index: 1; /* Above the border */
-  opacity: 1; /* Always fully opaque */
+  position: relative;
+  z-index: 1;
+  opacity: 1;
   background: url('assets/profile.jpg');
   background-size: cover;
   background-position: center;
@@ -363,7 +443,7 @@ section {
 }
 
 section[data-animate] {
-  opacity: 1; /* Default state */
+  opacity: 1;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -556,7 +636,7 @@ body.dark .form-message.error {
 footer {
   text-align: center;
   padding: 1rem 0;
-  background: rgba(255, 255, 255, 0.1); /* Subtle grassmorphism background */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   border-radius: 12px;
   margin: 0 1.5rem;
@@ -568,7 +648,6 @@ footer {
 body.dark footer {
   background: rgba(18, 18, 18, 0.1);
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
-  color: var(--grass-light);
 }
 
 footer p {
@@ -589,7 +668,7 @@ footer a:hover {
   .navbar {
     padding: 0 1rem;
     position: relative;
-    justify-content: space-between; /* Adjust for mobile layout */
+    justify-content: space-between;
   }
 
   .nav-center {
@@ -601,16 +680,10 @@ footer a:hover {
     flex-direction: column;
     gap: 0.8rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.2); /* Grassmorphism for mobile menu */
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
+    background: none;
     transform: translateY(-10px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  body.dark .nav-center {
-    background: rgba(18, 18, 18, 0.2);
   }
 
   .nav-center.active {
@@ -629,7 +702,7 @@ footer a:hover {
   }
 
   #theme-toggle {
-    width: 70px; /* Slightly smaller for mobile */
+    width: 70px;
     height: 30px;
     bottom: 15px;
     right: 15px;
@@ -646,7 +719,8 @@ footer a:hover {
   }
 
   #theme-toggle .icon {
-    font-size: 14px;
+    width: 14px;
+    height: 14px;
   }
 
   #theme-toggle .label {
@@ -672,11 +746,11 @@ footer a:hover {
   }
 
   .hero-image {
-    margin-left: 20px; /* Reduced shift on mobile */
+    margin-left: 20px;
   }
 
   .hero-image img {
-    width: 400px; /* Adjusted for mobile */
+    width: 400px;
   }
 
   .hero-image::before {
@@ -701,9 +775,22 @@ footer a:hover {
     }
   }
 
-  .btn {
-    padding: 10px 20px;
+  .btn.contact-btn {
+    padding: 8px 16px;
     font-size: 0.9rem;
+    height: 36px;
+    line-height: 20px;
+    width: 120px;
+  }
+
+  .social-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-btn img {
+    width: 20px;
+    height: 20px;
   }
 
   section {
@@ -792,11 +879,11 @@ footer a:hover {
   }
 
   .hero-image {
-    margin-left: 10px; /* Minimal shift on small screens */
+    margin-left: 10px;
   }
 
   .hero-image img {
-    width: 300px; /* Adjusted for small screens */
+    width: 300px;
   }
 
   .hero-image::before {
@@ -821,9 +908,22 @@ footer a:hover {
     }
   }
 
-  .btn {
-    padding: 8px 16px;
+  .btn.contact-btn {
+    padding: 6px 12px;
     font-size: 0.85rem;
+    height: 32px;
+    line-height: 20px;
+    width: 100px;
+  }
+
+  .social-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-btn img {
+    width: 18px;
+    height: 18px;
   }
 
   section {
@@ -873,7 +973,8 @@ footer a:hover {
   .skills-list li:hover,
   .contact-info a:hover,
   #theme-toggle:hover,
-  form button:hover {
+  form button:hover,
+  .social-btn:hover {
     transform: none;
     background: inherit;
     color: inherit;

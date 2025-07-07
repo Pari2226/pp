@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayush Sharawat - Portfolio</title>
+  <title>Ayush Sharawat</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body class="light">
   <header>
@@ -22,122 +23,119 @@
       </ul>
     </nav>
   </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Ayush Sharawat</h2>
+          <p class="subtitle">I'm <span id="role-text"></span></p>
+          <div class="button-container">
+            <a href="#contact" class="btn contact-btn">Contact Me</a>
+            <div class="social-buttons">
+              <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-btn">
+                <img src="assets/instagram-dark.png" alt="Instagram" class="social-icon light-icon">
+                <img src="assets/instagram-light.png" alt="Instagram" class="social-icon dark-icon">
+              </a>
+              <a href="https://github.com/yourprofile" target="_blank" class="social-btn">
+                <img src="assets/github-dark.png" alt="GitHub" class="social-icon light-icon">
+                <img src="assets/github-light.png" alt="GitHub" class="social-icon dark-icon">
+              </a>
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-btn">
+                <img src="assets/linkedin-dark.png" alt="LinkedIn" class="social-icon light-icon">
+                <img src="assets/linkedin-light.png" alt="LinkedIn" class="social-icon dark-icon">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/profile.jpg" alt="Ayush Sharawat">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-animate>
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics. I’ve built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems. I lead design and dev roles across college societies and thrive on blending technology with creativity.</p>
+      </div>
+    </section>
+
+    <section id="education" data-animate>
+      <div class="container">
+        <h2>Education</h2>
+        <ul class="education-list">
+          <li><strong>B.Tech in Computer Science and Engineering (AI)</strong><br>KIET Group of Institutions, Ghaziabad (AKTU)<br>Currently Pursuing, Average CGPA: 7.2</li>
+          <li><strong>Diploma</strong><br>Government Polytechnic, Ghaziabad (BTEUP)<br>70%</li>
+          <li><strong>10th Grade</strong><br>Dehradun Public School, Ghaziabad (CBSE)<br>78.4%</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" data-animate>
+      <div class="container">
+        <h2>Projects</h2>
+        <ul class="project-list">
+          <li><strong>Repo Quest:</strong> ML + NLP powered GitHub code snippet search.</li>
+          <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</li>
+          <li><strong>Employee Manager:</strong> Python + MySQL based employee record system.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" data-animate>
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>Java</li>
+          <li>C</li>
+          <li>MySQL</li>
+          <li>Graphics</li>
+          <li>UI/UX</li>
+          <li>Python</li>
+          <li>DBMS</li>
+          <li>Algorithms</li>
+          <li>DAA</li>
+          <li>DSA</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" data-animate>
+      <div class="container">
+        <h2>Contact</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:whatsupayush@gmail.com">whatsupayush@gmail.com</a></p>
+          <p>Phone: 9319391078</p>
+          <p>Certifications: AWS Academy Cloud Foundations</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <button id="theme-toggle">
     <span class="slider">
-      <span class="icon sun-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="5" fill="currentColor"/>
-          <path d="M12 3V1M12 23V21M3 12H1M23 12H21M5.64 5.64L4.22 4.22M19.78 19.78L18.36 18.36M5.64 18.36L4.22 19.78M19.78 4.22L18.36 5.64" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </span>
-      <span class="icon moon-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3C13.58 3 15.5 4.92 15.5 7.29A4.5 4.5 0 0 0 21 12.79Z" fill="currentColor"/>
-        </svg>
-      </span>
+      <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"></circle>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+      </svg>
+      <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
     </span>
     <span class="label light-label">LIGHT</span>
     <span class="label dark-label">DARK</span>
   </button>
 
-  <section id="hero" data-animate>
-    <div class="hero-content">
-      <div class="hero-text">
-        <h2>Ayush Sharawat</h2>
-        <p class="subtitle">I'm <span id="role-text"></span></p>
-        <a href="assets/resume.jpg" class="btn" download>My Resume</a>
-      </div>
-      <div class="hero-image">
-        <img src="assets/profile.jpg" alt="Ayush Sharawat">
-      </div>
-    </div>
-  </section>
-
-  <section id="about" data-animate>
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics.
-        I’ve built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems.
-        I lead design and dev roles across college societies and thrive on blending technology with creativity.
-      </p>
-    </div>
-  </section>
-
-  <section id="education" data-animate>
-    <div class="container">
-      <h2>Education</h2>
-      <ul class="education-list">
-        <li>
-          <strong>B.Tech in Computer Science and Engineering (AI)</strong><br>
-          KIET Group of Institutions, Ghaziabad (AKTU)<br>
-          Currently Pursuing, Average CGPA: 7.2
-        </li>
-        <li>
-          <strong>Diploma</strong><br>
-          Government Polytechnic, Ghaziabad (BTEUP)<br>
-          70%
-        </li>
-        <li>
-          <strong>10th Grade</strong><br>
-          Dehradun Public School, Ghaziabad (CBSE)<br>
-          78.4%
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects" data-animate>
-    <div class="container">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li><strong>Repo Quest:</strong> ML + NLP powered GitHub code snippet search.</li>
-        <li><strong>Blog Manager:</strong> Full-stack blog creation/edit platform (HTML, CSS, JS, Figma).</li>
-        <li><strong>Employee Manager:</strong> Python + MySQL based employee record system.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="skills" data-animate>
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Java</li>
-        <li>C</li>
-        <li>MySQL</li>
-        <li>Graphics</li>
-        <li>UI/UX</li>
-        <li>Python</li>
-        <li>DBMS</li>
-        <li>Algorithms</li>
-        <li>DAA</li>
-        <li>DSA</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact" data-animate>
-    <div class="container">
-      <h2>Contact</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <div id="formMessage" class="form-message"></div>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:whatsupayush@gmail.com">whatsupayush@gmail.com</a></p>
-        <p>Phone: 9319391078</p>
-        <p>Certifications: AWS Academy Cloud Foundations</p>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <p>Made with ♥ by <a href="#">Ayush Sharawat</a></p>
+    <p>Made with ♥ by <a href="https://github.com/yourprofile">Ayush Sharawat</a></p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
