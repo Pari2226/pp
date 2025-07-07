@@ -1,3 +1,5 @@
+/* Prompt #4 — Add active navigation link highlighting when scrolling or navigating to sections */
+
 :root {
   --light-bg: #ffffff;
   --light-text: #111;
@@ -79,7 +81,7 @@ body.dark header.scrolled {
   text-decoration: none;
   font-weight: 600;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 }
 
 .nav-center li a:hover {
@@ -88,6 +90,18 @@ body.dark header.scrolled {
 
 body.dark .nav-center li a:hover {
   color: var(--secondary);
+}
+
+.nav-center li a.active {
+  color: var(--primary);
+  background-color: rgba(255, 111, 97, 0.1); /* Subtle background for active link */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+body.dark .nav-center li a.active {
+  color: var(--secondary);
+  background-color: rgba(108, 99, 255, 0.1);
 }
 
 .hamburger {
@@ -160,7 +174,7 @@ body.dark #theme-toggle .slider {
 #theme-toggle .icon {
   width: 16px;
   height: 16px;
-  stroke:  var(--light-text);
+  stroke: var(--light-text);
   transition: stroke 0.3s ease;
 }
 
@@ -978,5 +992,13 @@ footer a:hover {
     transform: none;
     background: inherit;
     color: inherit;
+  }
+
+  .nav-center li a.active {
+    background: rgba(255, 111, 97, 0.1); /* Ensure active style persists on touch devices */
+  }
+
+  body.dark .nav-center li a.active {
+    background: rgba(108, 99, 255, 0.1);
   }
 }

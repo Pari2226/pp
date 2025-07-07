@@ -1,3 +1,5 @@
+/* Prompt #4 — Add active navigation link highlighting when scrolling or navigating to sections */
+
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -37,6 +39,15 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate');
+      // Highlight corresponding nav link
+      const sectionId = entry.target.id;
+      const navLinks = document.querySelectorAll('.nav-center li a');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
     }
   });
 }, { threshold: 0.1 });
