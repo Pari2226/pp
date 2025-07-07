@@ -67,34 +67,54 @@ const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-  (function() {
-    emailjs.init('Ayush Sharawat');
-  })();
+  // Initialize EmailJS with your actual User ID
+  emailjs.init('RD85aIMspEE5s7Gzb'); // Replace with your actual EmailJS User ID
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Show loading state
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
     const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
+    const templateParams = {
+      from_name: formData.get('name'),
+      from_email: formData.get('email'),
+      message: formData.get('message'),
+      to_email: 'whatsupayush@gmail.com', // Your email address
+    };
 
     try {
-      const response = await emailjs.send('service_y0tr9c6', 'template_8amzd8k', {
-        from_name: data.name,
-        from_email: data.email,
-        message: data.message,
-        to_email: 'whatsupayush@gmail.com',
-      }, 'RD85aIMspEE5s7Gzb');
+      const response = await emailjs.send(
+        'service_y0tr9c6', // Replace with your actual Service ID
+        'template_8amzd8k', // Replace with your actual Template ID
+        templateParams
+      );
 
+      console.log('SUCCESS!', response.status, response.text);
+      
       formMessage.textContent = 'Message sent successfully!';
-      formMessage.classList.add('success', 'show');
+      formMessage.className = 'form-message success show';
       contactForm.reset();
+      
     } catch (error) {
+      console.error('FAILED...', error);
+      
       formMessage.textContent = 'Failed to send message. Please try again.';
-      formMessage.classList.add('error', 'show');
-      console.error('Error:', error);
+      formMessage.className = 'form-message error show';
+    } finally {
+      // Reset button state
+      submitButton.textContent = originalText;
+      submitButton.disabled = false;
     }
 
-    setTimeout(() => formMessage.classList.remove('show'), 5000);
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      formMessage.classList.remove('show');
+    }, 5000);
   });
 }
 

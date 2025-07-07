@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayush Sharawat</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- FIXED: Updated EmailJS script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body class="light">
   <header>
     <nav class="navbar">
-      <button class="hamburger">☰</button>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
       <ul class="nav-center">
         <li><a href="#hero" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -28,20 +32,20 @@
     <section id="hero">
       <div class="hero-content">
         <div class="hero-text">
-          <h2>Ayush Sharawat</h2>
+          <h1>Ayush Sharawat</h1>
           <p class="subtitle">I'm <span id="role-text"></span></p>
           <div class="button-container">
-            <button class="btn contact-btn">Contact Me</button>
+            <button class="btn contact-btn" aria-label="Contact me">Contact Me</button>
             <div class="social-buttons">
-              <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-btn">
+              <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-btn" aria-label="Instagram">
                 <img src="assets/instagram-dark.png" alt="Instagram" class="social-icon light-icon">
                 <img src="assets/instagram-light.png" alt="Instagram" class="social-icon dark-icon">
               </a>
-              <a href="https://github.com/yourprofile" target="_blank" class="social-btn">
+              <a href="https://github.com/yourprofile" target="_blank" class="social-btn" aria-label="GitHub">
                 <img src="assets/github-dark.png" alt="GitHub" class="social-icon light-icon">
                 <img src="assets/github-light.png" alt="GitHub" class="social-icon dark-icon">
               </a>
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-btn">
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-btn" aria-label="LinkedIn">
                 <img src="assets/linkedin-dark.png" alt="LinkedIn" class="social-icon light-icon">
                 <img src="assets/linkedin-light.png" alt="LinkedIn" class="social-icon dark-icon">
               </a>
@@ -57,7 +61,7 @@
     <section id="about" data-animate>
       <div class="container">
         <h2>About Me</h2>
-        <p>I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics. I’ve built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems. I lead design and dev roles across college societies and thrive on blending technology with creativity.</p>
+        <p>I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics. I've built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems. I lead design and dev roles across college societies and thrive on blending technology with creativity.</p>
       </div>
     </section>
 
@@ -108,7 +112,7 @@
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit">Send</button>
+          <button type="submit">Send Message</button>
         </form>
         <div id="formMessage" class="form-message"></div>
         <div class="contact-info">
@@ -120,7 +124,7 @@
     </section>
   </main>
 
-  <button id="theme-toggle">
+  <button id="theme-toggle" aria-label="Toggle theme">
     <span class="slider">
       <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="5"></circle>
