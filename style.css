@@ -263,7 +263,14 @@ body.dark #hero {
 }
 
 .hero-text h2 {
-  font-size: 2.8rem;
+  font-size: 7rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: inherit;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
   margin: 0.5rem 0;
   font-weight: 700;
   color: inherit;
@@ -749,7 +756,10 @@ footer a:hover {
   }
 
   .hero-text h2 {
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+  .hero-text h1 {
+    font-size: 1rem;
   }
 
   .subtitle {
@@ -882,7 +892,10 @@ footer a:hover {
   }
 
   .hero-text h2 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
+  }
+  .hero-text h1 {
+    font-size: 1rem;
   }
 
   .subtitle {
