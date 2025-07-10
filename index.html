@@ -1,6 +1,6 @@
-<!-- ✅ Prompt #12 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </head>
+
 <body class="light">
   <header>
     <nav class="navbar">
@@ -36,7 +37,12 @@
           <h1>Ayush Sharawat</h1>
           <p class="subtitle">I'm <span id="role-text"></span></p>
           <div class="button-container">
-            <button class="btn contact-btn" aria-label="Contact me">Contact Me</button>
+            <button class="btn contact-btn" aria-label="Contact me">
+              Contact Me
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
             <div class="social-buttons">
               <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-btn" aria-label="Instagram">
                 <img src="assets/instagram-dark.png" alt="Instagram" class="social-icon light-icon">
@@ -46,25 +52,44 @@
                 <img src="assets/github-dark.png" alt="GitHub" class="social-icon light-icon">
                 <img src="assets/github-light.png" alt="GitHub" class="social-icon dark-icon">
               </a>
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-btn"
+                aria-label="LinkedIn">
                 <img src="assets/linkedin-dark.png" alt="LinkedIn" class="social-icon light-icon">
                 <img src="assets/linkedin-light.png" alt="LinkedIn" class="social-icon dark-icon">
               </a>
             </div>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="assets/profile.jpg" alt="Ayush Sharawat">
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <img src="assets/profile.jpg" alt="Ayush Sharawat">
+          </div>
         </div>
-      </div>
     </section>
 
     <section id="about" data-animate>
       <div class="container">
-        <h2>About Me</h2>
-        <p>I'm Ayush Sharawat, a B.Tech student in Computer Science and Engineering with a passion for frontend, backend, and graphics. I've built everything from intelligent GitHub search tools using ML/NLP to dynamic blog management systems. I lead design and dev roles across college societies and thrive on blending technology with creativity.</p>
-        <div class="button-container">
-          <a href="assets/resume.pdf" target="_blank" download class="btn contact-btn" aria-label="Download Resume">View Resume</a>
+        <div class="about-box">
+          <h2>About <span>Me</span></h2>
+          <p>
+            I’m a B.Tech AI student at KIET Group of Institutions.
+            I build end-to-end digital solutions as a Full Stack Developer,
+            UI/UX Designer, and Graphics Designer.
+            From designing in Figma to developing with React, I love creating
+            user-friendly, meaningful digital experiences.
+            I lead design and graphics teams for DSDL and Quizzinga, and I’ve
+            coordinated Innotech, our college’s tech event.
+            Collaboration and leadership drive me to turn ideas into impactful products.
+            Beyond work, I enjoy exploring new places and playing cricket.
+          </p>
+          <a href="assets/resume.pdf" class="btn contact-btn">
+            View Resume
+            <svg class="paper-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6z" />
+              <path d="M14 2v6h6" />
+              <path d="M8 13h8M8 17h8M8 9h2" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -73,7 +98,8 @@
       <div class="container">
         <h2>Education</h2>
         <ul class="education-list">
-          <li><strong>B.Tech in Computer Science and Engineering (AI)</strong><br>KIET Group of Institutions, Ghaziabad (AKTU)<br>Currently Pursuing, Average CGPA: 7.2</li>
+          <li><strong>B.Tech in Computer Science and Engineering (AI)</strong><br>KIET Group of Institutions, Ghaziabad
+            (AKTU)<br>Currently Pursuing, Average CGPA: 7.2</li>
           <li><strong>Diploma</strong><br>Government Polytechnic, Ghaziabad (BTEUP)<br>70%</li>
           <li><strong>10th Grade</strong><br>Dehradun Public School, Ghaziabad (CBSE)<br>78.4%</li>
         </ul>
@@ -126,13 +152,22 @@
         </div>
       </div>
     </section>
+
+    <section id="resume" style="page-break-before: always;">
+      <div class="container">
+        <h2>Resume</h2>
+        <p>This is a placeholder for your resume content. Add your detailed CV, education, work experience, skills, certifications, and projects here.</p>
+      </div>
+    </section>
   </main>
 
   <button id="theme-toggle" aria-label="Toggle theme">
     <span class="slider">
       <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="5"></circle>
-        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        <path
+          d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+        </path>
       </svg>
       <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -146,4 +181,5 @@
     <p>Made with ♥ by <a href="https://github.com/yourprofile">Ayush Sharawat</a></p>
   </footer>
 </body>
+
 </html>
