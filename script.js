@@ -35,22 +35,21 @@ window.addEventListener('load', () => {
 });
 
 const sections = document.querySelectorAll('section[data-animate]');
+const navLinks = document.querySelectorAll('.nav-center li a');
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate');
-      // Highlight corresponding nav link
-      const sectionId = entry.target.id;
-      const navLinks = document.querySelectorAll('.nav-center li a');
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${sectionId}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-}, { threshold: 0.1 });
+  // Sort entries by vertical position to get the top-most visible section
+  const visibleSections = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+  if (visibleSections.length > 0) {
+    const sectionId = visibleSections[0].target.id;
+    navLinks.forEach(link => link.classList.remove('active'));
+    const navLink = document.querySelector(`.nav-center li a[href="#${sectionId}"]`);
+    if (navLink) navLink.classList.add('active');
+  }
+}, { threshold: 0.4 });
 
 sections.forEach(section => {
   observer.observe(section);

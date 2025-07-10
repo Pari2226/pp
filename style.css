@@ -326,7 +326,7 @@ body.dark #hero {
 .btn.contact-btn {
   background: var(--primary);
   color: #fff;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border: none;
   border-radius: 25px;
   text-decoration: none;
@@ -342,6 +342,16 @@ body.dark #hero {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
+}
+
+/* Force consistent contact button style in Projects, Skills, and Contact sections */
+.project-box .btn.contact-btn,
+.skills-box .btn.contact-btn,
+.contact-box .btn.contact-btn {
+  display: block;
+  margin: 1rem auto 0 auto;
+  width: 200px;
+  text-align: center;
 }
 
 .btn.contact-btn:hover {
@@ -500,11 +510,20 @@ body.dark .about-box {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.about-box h2 {
+body.light .about-box h2 {
   margin: 0 0 1rem 0;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--light-text);
+  color: #111;
+  fill: #111;
+}
+
+body.dark .about-box h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  fill: #fff;
 }
 
 /* Highlight the word "Me" in the About heading */
@@ -1062,9 +1081,9 @@ footer a:hover {
     background: rgba(255, 111, 97, 0.1); /* Ensure active style persists on touch devices */
   }
 
-  body.dark .nav-center li a.active {
+  /* body.dark .nav-center li a.active {
     background: rgba(108, 99, 255, 0.1);
-  }
+  } */
 }
 /* Arrow in contact button */
 .btn.contact-btn .arrow {
@@ -1075,3 +1094,119 @@ footer a:hover {
 .btn.contact-btn:hover .arrow {
   transform: translateX(5px);
 }
+
+.human-icon {
+  vertical-align: baseline;
+  position: relative;
+  top: 3px;
+  margin-right: 8px;
+}
+
+body.light .human-icon {
+  fill: #111;
+  color: #111;
+}
+
+body.dark .human-icon {
+  fill: #fff;
+  color: #fff;
+}
+.section-heading h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* Scroll indicator with bounce animation and transition for slide-down */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: bounce 2s infinite;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.scroll-indicator p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.mouse-icon {
+  position: relative;
+  margin-top: 8px;
+  width: 24px;
+  height: 36px;
+}
+
+.mouse-icon rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  rx: 12;
+  ry: 12;
+}
+
+.mouse-icon .scroll-wheel {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -10px);
+  }
+  60% {
+    transform: translate(-50%, -5px);
+  }
+}
+
+.hide-scroll-indicator {
+  opacity: 0;
+  transform: translate(-50%, 40px);
+  pointer-events: none;
+}
+.project-box,
+.skills-box,
+.contact-box {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+              radial-gradient(circle at top center, rgba(0, 0, 0, 0.05), transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .project-box,
+body.dark .skills-box,
+body.dark .contact-box {
+  background: linear-gradient(rgba(18, 18, 18, 0.2), rgba(18, 18, 18, 0.2)),
+              radial-gradient(circle at top center, rgba(255, 255, 255, 0.05), transparent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+

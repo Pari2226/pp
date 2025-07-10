@@ -65,12 +65,26 @@
             <img src="assets/profile.jpg" alt="Ayush Sharawat">
           </div>
         </div>
+        <div class="scroll-indicator">
+          <p>Scroll to explore</p>
+          <svg class="mouse-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="1" width="22" height="34" rx="11" ry="11"></rect>
+            <circle cx="12" cy="8" r="2"></circle>
+          </svg>
+        </div>
     </section>
 
     <section id="about" data-animate>
       <div class="container">
         <div class="about-box">
-          <h2>About <span>Me</span></h2>
+          <h2>
+            <svg class="human-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M5 22v-3a7 7 0 0 1 14 0v3" fill="currentColor"/>
+              <path d="M9 14c1 1 5 1 6 0" fill="currentColor"/>
+            </svg>
+            About <span>Me</span>
+          </h2>
           <p>
             I’m a B.Tech AI student at KIET Group of Institutions.
             I build end-to-end digital solutions as a Full Stack Developer,
@@ -82,7 +96,7 @@
             Collaboration and leadership drive me to turn ideas into impactful products.
             Beyond work, I enjoy exploring new places and playing cricket.
           </p>
-          <a href="assets/resume.pdf" class="btn contact-btn">
+          <a href="assets/resume.pdf" class="btn contact-btn" target="_blank" rel="noopener noreferrer">
             View Resume
             <svg class="paper-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6z" />
@@ -96,7 +110,13 @@
 
     <section id="education" data-animate>
       <div class="container">
-        <h2>Education</h2>
+        <div class="section-heading">
+          <svg class="education-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            <path d="M12 12L1 6l11-6 11 6-11 6z"/>
+          </svg>
+          <h2>Education</h2>
+        </div>
         <ul class="education-list">
           <li><strong>B.Tech in Computer Science and Engineering (AI)</strong><br>KIET Group of Institutions, Ghaziabad
             (AKTU)<br>Currently Pursuing, Average CGPA: 7.2</li>
@@ -153,12 +173,6 @@
       </div>
     </section>
 
-    <section id="resume" style="page-break-before: always;">
-      <div class="container">
-        <h2>Resume</h2>
-        <p>This is a placeholder for your resume content. Add your detailed CV, education, work experience, skills, certifications, and projects here.</p>
-      </div>
-    </section>
   </main>
 
   <button id="theme-toggle" aria-label="Toggle theme">
