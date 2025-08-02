@@ -1,4 +1,4 @@
-# potfolio <br>
+# portfolio <br>
 This is my Potfolio Website <br>
 <br>
 # FILE STRUCTURE <br>
