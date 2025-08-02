@@ -1,5 +1,5 @@
 # portfolio <br>
-This is my Potfolio Website <br>
+This is my Portfolio Website <br>
 <br>
 # FILE STRUCTURE <br>
 your-portfolio/ <br>
