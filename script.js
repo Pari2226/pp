@@ -78,7 +78,7 @@ const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
   // Initialize EmailJS with your actual User ID
-  emailjs.init('RD85aIMspEE5s7Gzb'); // Replace with your actual EmailJS User ID
+  emailjs.init('hq1ZT3JSrGBs48KQD'); // Replace with your actual EmailJS User ID
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -94,13 +94,13 @@ if (contactForm) {
       from_name: formData.get('name'),
       from_email: formData.get('email'),
       message: formData.get('message'),
-      to_email: 'whatsupayush@gmail.com', // Your email address
+      to_email: 'officialpari24@gmail.com', // Your email address
     };
 
     try {
       const response = await emailjs.send(
-        'service_y0tr9c6', // Replace with your actual Service ID
-        'template_8amzd8k', // Replace with your actual Template ID
+        'service_0r87qrc', // Replace with your actual Service ID
+        'template_gwgfsxd', // Replace with your actual Template ID
         templateParams
       );
 
